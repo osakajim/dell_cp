@@ -570,7 +570,7 @@ button { color: inherit; }
   .product-index { font-size: 30px; }
   .product-stage { height: 105vw; max-height: 560px; border-radius: 18px; }
   #productImage { inset: 5%; width: 90%; height: 90%; }
-  .hotspot { width: 21px; height: 21px; font-size: 9px; }
+  .hotspot { width: 18px; height: 18px; font-size: 9px; }
   .hotspot-label { max-width: 130px; padding: 6px 8px; font-size: 9px; }
   .view-switcher { right: 10px; bottom: 10px; }
   .view-badge { top: 10px; left: 10px; padding: 6px 9px; font-size: 9px; }
