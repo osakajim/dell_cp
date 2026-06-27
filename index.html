@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alienware CP 产品交互培训中心</title>
+  <link rel="stylesheet" href="css/product-center.css?v=20260612-4">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">A</span>
+        <span>
+          <strong>ALIENWARE CP TRAINING</strong>
+          <small>产品功能 · 故障诊断 · 固件更新</small>
+        </span>
+      </a>
+      <div class="topbar-meta">
+        <span id="productCount">5 PRODUCTS</span>
+        <button id="sourceButton" type="button">查看 PPT 原页</button>
+      </div>
+    </header>
+
+    <nav class="product-switcher" id="productSwitcher" aria-label="产品切换"></nav>
+
+    <main class="workspace">
+      <section class="visual-panel">
+        <div class="product-heading">
+          <div>
+            <div class="eyebrow" id="productType"></div>
+            <h1 id="productName"></h1>
+            <p id="productSummary"></p>
+          </div>
+          <span class="product-index" id="productIndex"></span>
+        </div>
+
+        <div class="product-stage" id="productStage">
+          <div class="stage-glow"></div>
+          <div class="view-badge" id="viewBadge"></div>
+          <img id="productImage" alt="" decoding="async">
+          <svg id="hotspotLines" class="hotspot-lines" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true"></svg>
+          <div id="hotspotLayer"></div>
+          <div class="view-switcher" id="viewSwitcher" aria-label="产品视角"></div>
+          <div class="stage-hint" id="stageHint">点击编号查看对应功能</div>
+        </div>
+
+        <div class="quick-facts" id="quickFacts"></div>
+      </section>
+
+      <section class="content-panel">
+        <nav class="section-tabs" id="sectionTabs" aria-label="内容分类">
+          <button class="section-tab active" data-section="features" type="button">功能与部件</button>
+          <button class="section-tab" data-section="diagnosis" type="button">故障诊断</button>
+          <button class="section-tab" data-section="firmware" type="button">固件更新</button>
+          <button class="section-tab" data-section="source" type="button">PPT 原页</button>
+        </nav>
+
+        <div class="content-scroll">
+          <header class="section-heading">
+            <div class="section-kicker" id="sectionKicker"></div>
+            <h2 id="sectionTitle"></h2>
+            <p id="sectionDescription"></p>
+          </header>
+          <div id="sectionContent"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="sourceDialog">
+    <button class="dialog-close" id="dialogClose" type="button" aria-label="关闭">×</button>
+    <img id="dialogImage" alt="PPT 原页放大图">
+  </dialog>
+
+  <script src="js/product-center.js?v=20260612-7"></script>
+</body>
+</html>
