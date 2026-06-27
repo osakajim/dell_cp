@@ -4,8 +4,23 @@ const products = {
     type: "有线游戏耳机",
     icon: "H",
     summary: "高解析音频认证驱动、Dolby Atmos、可伸缩麦克风，支持 USB Type-A 与 3.5 mm 连接。",
-    image: "product/aw520h/aw520h-product.webp",
-    views: ["product/aw520h/aw520h-product.webp"],
+    image: "product/aw520h/views/gallery-2.webp",
+    views: [
+      "product/aw520h/views/gallery-2.webp",
+      "product/aw520h/views/gallery-9.webp",
+      "product/aw520h/views/gallery-8.webp",
+      "product/aw520h/views/gallery-5.webp",
+      "product/aw520h/views/gallery-6.webp"
+    ],
+    viewNames: ["正面（佩戴面）", "反面（控制区）", "左侧（麦克风）", "右侧（标志灯）", "线缆 / 转接头"],
+    viewScales: [0.9, 0.92, 0.9, 0.88, 0.88],
+    viewFeatures: {
+      0: [[4, 62, 91, 70, 82]],
+      1: [[1, 32, 74, 8, 65], [2, 78, 75, 80, 61], [4, 36, 88, 6, 86]],
+      2: [[0, 27, 75, 7, 65], [3, 94, 77, 78, 88], [4, 92, 91, 76, 76]],
+      3: [[0, 52, 72, 62, 57], [1, 59, 84, 70, 83], [4, 52, 91, 64, 90]],
+      4: [[0, 65, 74, 74, 58], [3, 10, 88, 6, 76], [4, 84, 88, 72, 80]]
+    },
     imageScale: 0.9,
     facts: [["连接", "USB Type-A / 3.5 mm"], ["平台", "Windows / 主机 / 移动设备"], ["软件", "Alienware Command Center"]],
     features: [
@@ -39,17 +54,19 @@ const products = {
     image: "product/aw720m/views/view-2.webp",
     views: [
       "product/aw720m/views/view-2.webp",
+      "product/aw720m/views/view-bottom.webp",
       "product/aw720m/views/view-1.webp",
       "product/aw720m/views/view-3.webp",
-      "product/aw720m/views/view-bottom.webp"
+      "product/aw720m/views/view-4.webp"
     ],
-    viewNames: ["正面（按键面）", "左侧（侧键）", "前端（接口）", "反面（底部）"],
-    viewScales: [0.88, 0.9, 0.86, 1.02],
+    viewNames: ["正面（按键面）", "反面（底部）", "左侧（侧键）", "前端（USB-C）", "后侧外观"],
+    viewScales: [0.88, 1.0, 0.9, 0.86, 0.9],
     viewFeatures: {
       0: [[0, 39, 32, 8, 25], [1, 50, 27, 40, 10], [2, 61, 32, 76, 25]],
-      1: [[7, 20, 57, 5, 70], [8, 49, 43, 68, 32], [9, 55, 50, 73, 49]],
-      2: [[7, 50, 64, 64, 78]],
-      3: [[3, 31, 49, 5, 46], [4, 50, 68, 18, 80], [5, 50, 42, 61, 29], [6, 69, 49, 78, 60]]
+      1: [[3, 30, 48, 5, 44], [4, 50, 63, 18, 78], [5, 50, 39, 61, 25], [6, 70, 48, 78, 59]],
+      2: [[8, 49, 43, 68, 32], [9, 55, 50, 73, 49]],
+      3: [[7, 50, 64, 64, 78]],
+      4: []
     },
     imageScale: 0.78,
     facts: [["连接", "2.4GHz / 蓝牙 / 有线"], ["DPI", "800–3200 五档"], ["软件", "AWCC 自定义"]],
@@ -89,21 +106,23 @@ const products = {
     image: "product/aw725h/views/view-1.webp",
     views: [
       "product/aw725h/views/view-1.webp",
-      "product/aw725h/views/view-2.webp"
+      "product/aw725h/views/view-2.webp",
+      "product/aw725h/views/view-3.webp"
     ],
-    viewNames: ["整体 / 麦克风", "左右耳罩控制区"],
-    viewScales: [0.9, 0.9],
+    viewNames: ["整体 / 麦克风", "左右耳罩控制区", "侧面外观"],
+    viewScales: [0.9, 0.9, 0.9],
     viewFeatures: {
       0: [[3, 18, 82, 4, 88]],
       1: [
-        [7, 36, 61, 5, 54],
-        [6, 36, 70, 5, 68],
-        [4, 36, 79, 5, 81],
-        [5, 36, 85, 5, 89],
-        [0, 65, 60, 78, 52],
-        [1, 65, 67, 79, 65],
-        [2, 65, 76, 78, 80]
-      ]
+        [7, 27, 58, 5, 50],
+        [6, 28, 68, 5, 66],
+        [4, 28, 79, 5, 82],
+        [5, 28, 86, 5, 90],
+        [0, 74, 58, 82, 50],
+        [1, 74, 67, 83, 66],
+        [2, 74, 77, 84, 82]
+      ],
+      2: [[0, 70, 78, 80, 68], [5, 10, 88, 5, 82]]
     },
     imageScale: 0.82,
     facts: [["连接", "2.4GHz / 蓝牙 / 3.5 mm"], ["充电", "USB-C"], ["软件", "AWCC / Dolby Atmos"]],
@@ -141,15 +160,19 @@ const products = {
     image: "product/aw620m/views/view-1.webp",
     views: [
       "product/aw620m/views/view-1.webp",
+      "product/aw620m/views/view-bottom.webp",
       "product/aw620m/views/view-2.webp",
-      "product/aw620m/views/view-bottom.webp"
+      "product/aw620m/views/view-3.webp",
+      "product/aw620m/views/view-4.webp"
     ],
-    viewNames: ["正面（按键面）", "左侧（侧键）", "反面（底部）"],
-    viewScales: [0.88, 0.92, 1.04],
+    viewNames: ["正面（按键面）", "反面（底部）", "左侧（侧键）", "右后侧外观", "前端（USB-C）"],
+    viewScales: [0.88, 1.04, 0.92, 0.92, 0.94],
     viewFeatures: {
       0: [[0, 40, 30, 9, 21], [1, 51, 25, 41, 8], [2, 62, 30, 76, 21], [3, 51, 36, 70, 39]],
-      1: [[5, 18, 61, 4, 73], [6, 54, 43, 68, 31], [7, 61, 45, 76, 48]],
-      2: [[4, 65, 48, 77, 61]]
+      1: [[4, 65, 48, 77, 61]],
+      2: [[6, 54, 43, 68, 31], [7, 61, 45, 76, 48]],
+      3: [],
+      4: [[5, 18, 61, 4, 73]]
     },
     imageScale: 0.8,
     facts: [["连接", "2.4GHz / 有线"], ["充电", "USB-C"], ["软件", "AWCC 自定义"]],
@@ -193,15 +216,15 @@ const products = {
     viewScales: [0.96, 0.92],
     viewFeatures: {
       0: [
-        [0, 18, 46, 4, 35],
-        [1, 25, 52, 4, 49],
-        [2, 23, 59, 4, 64],
-        [3, 50, 58, 42, 73],
-        [4, 49, 32, 42, 20],
-        [5, 82, 40, 71, 24],
-        [6, 88, 53, 77, 69]
+        [0, 33, 51, 7, 45],
+        [1, 37, 45, 7, 31],
+        [2, 48, 50, 38, 72],
+        [3, 43, 55, 36, 81],
+        [4, 46, 33, 38, 19],
+        [5, 82, 39, 72, 24],
+        [6, 86, 54, 73, 73]
       ],
-      1: [[7, 66, 62, 74, 75]]
+      1: [[7, 34, 80, 57, 87]]
     },
     imageScale: 0.94,
     facts: [["轴体", "Cherry MX 矮轴红轴"], ["灯效", "AlienFX 单键 RGB"], ["连接", "双 USB / AWCC"]],
@@ -223,6 +246,176 @@ const products = {
     ],
     firmware: [],
     source: [13, 14]
+  },
+  kb216: {
+    name: "KB216",
+    type: "有线键盘",
+    icon: "K",
+    summary: "Dell 有线多媒体键盘，全尺寸布局，USB 即插即用，适合日常办公、服务台和固定工位使用。",
+    image: "product/kb216/kb216-product.webp",
+    views: [
+      "product/kb216/kb216-product.webp",
+      "product/kb216/ai-views/bottom-reference.webp"
+    ],
+    viewNames: ["正面（PPT 原图）", "反面（AI 补全参考）"],
+    viewScales: [1.08, 1.0],
+    viewFeatures: {
+      0: [[0, 49, 63, 6, 72], [1, 66, 58, 70, 43], [2, 78, 65, 73, 82], [3, 52, 25, 60, 17]],
+      1: [[3, 50, 6, 57, 18], [5, 50, 51, 60, 64]]
+    },
+    imageScale: 1.08,
+    facts: [["连接", "USB-A 有线"], ["布局", "全尺寸键盘"], ["适用", "Windows / 日常办公"]],
+    features: [
+      ["全尺寸键位布局", "包含主键区、方向键、导航区和数字小键盘，适合高频录入与表格场景。", 49, 63, 6, 72],
+      ["多媒体快捷键", "键盘顶部提供常用多媒体快捷功能，便于快速控制音量和播放。", 66, 58, 70, 43],
+      ["数字小键盘", "右侧数字键区用于财务、报表和客服录入场景。", 78, 65, 73, 82],
+      ["USB 连接线", "通过 USB-A 线缆连接电脑，无需单独配对或充电。", 52, 25, 60, 17],
+      ["低轮廓按键", "低轮廓键帽兼顾手感和清洁便利，适合长时间办公输入。", 35, 64, 7, 46],
+      ["薄型办公机身", "紧凑外壳便于桌面摆放，减少固定工位占用。", 51, 78, 7, 88]
+    ],
+    diagnosis: [
+      ["键盘无反应", ["确认 USB 插头完全插入电脑接口", "更换 USB 端口，优先使用主机直连端口", "重启电脑并等待系统重新识别 HID 设备", "换到另一台电脑测试，区分电脑端与键盘端问题"]],
+      ["个别按键失灵 / 连击", ["检查键帽周围是否有异物、灰尘或液体残留", "在记事本中连续测试问题按键", "关闭可能影响输入的第三方热键或宏软件", "跨设备仍复现时按硬件故障处理"]],
+      ["快捷键 / 多媒体键异常", ["确认当前应用支持对应快捷键", "检查系统音量、静音和播放设备状态", "尝试 Fn 或多媒体键组合操作", "更新系统 HID 键盘驱动后重试"]],
+      ["售后判断", ["线缆、USB 插头或外壳有明显损坏", "多设备测试仍完全无输入", "进液、异味、按键卡死或大面积失灵"]]
+    ],
+    firmware: [],
+    source: [
+      { src: "product/source/kb216-overview.webp", label: "KB216 功能与说明" },
+      { src: "product/source/desktop-input-troubleshooting.webp", label: "键鼠常见问题诊断" }
+    ]
+  },
+  ms116: {
+    name: "MS116",
+    type: "有线鼠标",
+    icon: "M",
+    summary: "Dell 有线光电鼠标，USB 即插即用，左右键、滚轮和光学追踪结构清晰，适合标准办公场景。",
+    image: "product/ms116/ms116-product.webp",
+    views: [
+      "product/ms116/ai-views/top-reference.webp",
+      "product/ms116/ms116-product.webp",
+      "product/ms116/views/view-bottom.webp"
+    ],
+    viewNames: ["正面（AI 补全参考）", "侧面（PPT 原图）", "反面（Dell 支持实拍）"],
+    viewScales: [0.86, 0.98, 1.02],
+    viewFeatures: {
+      0: [[0, 39, 39, 9, 26], [1, 50, 37, 39, 15], [2, 61, 39, 76, 26], [3, 50, 6, 61, 15]],
+      1: [[0, 37, 47, 8, 34], [1, 44, 44, 12, 20], [2, 54, 45, 73, 25], [3, 17, 63, 6, 76], [5, 73, 54, 77, 69]],
+      2: [[3, 6, 50, 5, 36], [4, 49, 49, 61, 40], [5, 54, 73, 69, 84]]
+    },
+    imageScale: 0.98,
+    facts: [["连接", "USB-A 有线"], ["追踪", "光学传感器"], ["按键", "左右键 / 滚轮"]],
+    features: [
+      ["左键", "标准主按键，用于选择、拖拽和确认操作。", 37, 47, 8, 34],
+      ["滚轮 / 中键", "滚动页面，按下可作为中键使用。", 44, 44, 12, 20],
+      ["右键", "标准副按键，用于打开快捷菜单。", 54, 45, 73, 25],
+      ["USB 连接线", "通过 USB-A 线缆连接电脑，插入后系统自动识别。", 17, 63, 6, 76],
+      ["光学传感器", "底部传感器负责移动追踪，保持镜头清洁可减少光标漂移。", 59, 72, 67, 84],
+      ["人体工学外形", "对称外形兼顾左右手操作，适合长时间办公。", 73, 54, 77, 69]
+    ],
+    diagnosis: [
+      ["鼠标无反应", ["确认 USB 插头插紧并更换电脑 USB 端口", "观察系统是否识别为 HID 鼠标", "换到另一台电脑测试，排除主机端问题", "避免通过故障扩展坞或松动接口连接"]],
+      ["光标不动 / 跳动", ["清洁鼠标底部光学传感器", "更换鼠标垫或使用平整、非反光表面", "检查线缆是否被拉扯或压住", "在另一台电脑复测定位硬件问题"]],
+      ["按键或滚轮异常", ["检查按键缝隙和滚轮处是否有异物", "在系统设置中确认主副键没有被交换", "跨应用测试滚轮滚动与中键按压", "持续连击、卡键或无回弹时进入售后判断"]],
+      ["售后判断", ["线缆、外壳、USB 端口或滚轮存在物理损坏", "多设备测试后仍无法识别", "进液、异味、明显摔损或按键结构异常"]]
+    ],
+    firmware: [],
+    source: [
+      { src: "product/source/ms116-overview.webp", label: "MS116 功能与说明" },
+      { src: "product/source/desktop-input-troubleshooting.webp", label: "键鼠常见问题诊断" }
+    ]
+  },
+  km5221w: {
+    name: "KM5221W",
+    type: "无线键鼠套装",
+    icon: "K+M",
+    summary: "Dell 专业无线键盘和鼠标套装，2.4GHz 接收器连接，包含全尺寸键盘、无线鼠标和 Dell Peripheral Manager 支持。",
+    image: "product/km5221w/km5221w-product.webp",
+    views: [
+      "product/km5221w/km5221w-product.webp",
+      "product/km5221w/official-cutouts/view-1.webp",
+      "product/km5221w/official-cutouts/view-2.webp",
+      "product/km5221w/official-cutouts/view-3.webp"
+    ],
+    viewNames: ["PPT 功能总览", "官方整套顶视", "键盘近景", "键盘侧面"],
+    viewScales: [1.0, 1.02, 1.04, 1.04],
+    viewFeatures: {
+      0: [[5, 58, 68, 47, 82], [6, 32, 68, 7, 80], [4, 77, 77, 78, 84]],
+      1: [[0, 42, 49, 7, 35], [1, 63, 46, 69, 30], [2, 80, 51, 83, 68], [7, 43, 56, 10, 72]],
+      2: [[0, 47, 58, 5, 69], [1, 68, 37, 74, 21], [7, 50, 75, 20, 87]],
+      3: [[7, 49, 47, 61, 32]]
+    },
+    imageScale: 1.0,
+    facts: [["连接", "2.4GHz 无线接收器"], ["组合", "键盘 + 鼠标"], ["软件", "Dell Peripheral Manager"]],
+    features: [
+      ["全尺寸无线键盘", "包含数字小键盘和常用办公键区，适合桌面固定工位。", 38, 52, 6, 32],
+      ["多媒体 / 快捷键区", "顶部快捷键可用于音量、播放和常用系统操作。", 62, 42, 69, 27],
+      ["无线鼠标按键", "鼠标提供左右键和滚轮，满足标准办公点击、滚动和中键操作。", 73, 66, 78, 50],
+      ["DPI / 指示控制", "鼠标支持灵敏度和状态相关控制，便于适配不同桌面表面。", 72, 72, 82, 67],
+      ["鼠标底部开关", "底部电源开关用于开启、关闭或节省电量。", 77, 77, 78, 84],
+      ["USB 无线接收器", "接收器插入电脑 USB-A 端口后连接键盘和鼠标。", 58, 68, 47, 82],
+      ["电池仓", "键盘和鼠标均使用电池供电，低电量时应优先更换电池排查。", 32, 68, 7, 80],
+      ["薄型办公机身", "低轮廓键盘和紧凑鼠标组合，便于桌面摆放。", 42, 73, 18, 84]
+    ],
+    diagnosis: [
+      ["键盘或鼠标无法连接", ["确认 USB 接收器已插入电脑并靠近设备", "检查键盘、鼠标电源开关和电池方向", "更换新电池后重新测试", "更换 USB 端口或电脑进行交叉验证"]],
+      ["输入延迟 / 断连", ["避免接收器被主机、显示器或金属物遮挡", "减少 2.4GHz 干扰源，必要时使用 USB 延长线靠近桌面", "确认电池电量充足", "重启电脑后重新识别接收器"]],
+      ["按键、滚轮或光标异常", ["清洁鼠标传感器和键盘按键缝隙", "在系统设置中确认鼠标按键、指针速度和键盘布局", "关闭冲突的第三方键鼠管理软件", "使用 Dell Peripheral Manager 检查配置"]],
+      ["售后判断", ["键盘和鼠标跨设备仍无法连接", "接收器遗失、损坏或接口变形", "存在进液、摔损、按键卡死或鼠标按键无回弹"]]
+    ],
+    firmware: [],
+    source: [
+      { src: "product/source/km5221w-overview.webp", label: "KM5221W 功能与说明" },
+      { src: "product/source/desktop-input-troubleshooting.webp", label: "键鼠常见问题诊断" }
+    ]
+  },
+  da326: {
+    name: "DA326",
+    type: "七合一 USB-C 移动适配器",
+    icon: "HUB",
+    summary: "Dell Pro 七合一 USB-C 移动适配器，集成 USB、网口、HDMI、DisplayPort 与 USB-C 供电，适合移动办公扩展。",
+    image: "product/da326/da326-product.webp",
+    views: [
+      "product/da326/views/view-2.webp",
+      "product/da326/views/view-1.webp",
+      "product/da326/views/view-3.webp",
+      "product/da326/views/view-4.webp",
+      "product/da326/views/view-5.webp"
+    ],
+    viewNames: ["双 USB-A 面", "USB-C / DP 面", "网口 / 显示接口", "线缆 / USB-A 面", "顶部 RFID 区"],
+    viewScales: [0.98, 0.98, 0.98, 0.86, 0.86],
+    viewFeatures: {
+      0: [[1, 14, 55, 7, 36], [3, 50, 59, 38, 82], [4, 88, 55, 74, 77]],
+      1: [[2, 12, 55, 6, 75], [6, 50, 59, 38, 82]],
+      2: [[5, 10, 54, 5, 74], [7, 50, 61, 39, 82], [6, 88, 57, 74, 78]],
+      3: [[0, 35, 72, 7, 86], [3, 52, 57, 38, 82], [4, 86, 55, 74, 77]],
+      4: [[8, 50, 52, 61, 70]]
+    },
+    imageScale: 1.04,
+    facts: [["连接", "USB-C 上行"], ["扩展", "USB / RJ45 / DP / HDMI"], ["显示", "最高 4K60 级输出"]],
+    features: [
+      ["USB-C 上行线缆", "连接电脑的主线缆，负责数据、显示和供电协商。"],
+      ["USB 3.2 Gen 2 USB-C 端口", "用于连接 USB-C 外设，支持高速数据传输。"],
+      ["USB-C 电源输入", "连接 USB-C 电源适配器，为电脑提供电源直通。"],
+      ["USB 3.2 Gen 2 USB-A 端口", "用于 U 盘、键鼠、移动硬盘等 USB-A 外设。"],
+      ["USB 3.2 Gen 1 USB-A 端口", "用于键鼠、U 盘等常见 USB-A 外设连接。"],
+      ["以太网端口", "RJ45 有线网络接口，适合会议室、工位和弱无线环境。"],
+      ["DisplayPort 端口", "连接外接显示器或投影设备，支持高分辨率输出。"],
+      ["HDMI 端口", "连接电视、显示器或会议投屏设备。"],
+      ["RFID 标签预留位置", "顶部区域用于企业资产管理标签粘贴和识别。"]
+    ],
+    diagnosis: [
+      ["适配器无反应", ["确认 USB-C 插头完全插入电脑", "检查电脑 USB-C 端口是否支持数据传输或视频输出", "去掉其他转接头，直接连接电脑测试", "重启电脑后重新插拔适配器"]],
+      ["外接显示无画面", ["确认显示器输入源选择 HDMI 或 DisplayPort", "检查电脑 USB-C 端口是否支持 DP Alt Mode", "更换 HDMI / DP 线缆并降低刷新率测试", "只连接一台显示器确认基础输出"]],
+      ["USB 外设或网口不可用", ["检查外设单独连接电脑是否正常", "RJ45 需确认网线、交换机端口和系统网络适配器状态", "移动硬盘供电不足时连接外部电源或减少同时接入设备", "更新系统芯片组、USB 和网卡驱动"]],
+      ["PD 充电异常", ["使用原装或足功率 USB-C 电源适配器", "确认充电线支持对应功率", "部分主机或电源会扣除适配器自身功耗，实际入电脑功率会低于标称", "高温或满载时可能触发保护，冷却后再测试"]],
+      ["售后判断", ["USB-C 线缆、接口或外壳存在明显损坏", "多台电脑测试均无法识别", "所有端口同时失效或设备异常发热"]]
+    ],
+    firmware: [],
+    source: [
+      { src: "product/source/da326-overview.webp", label: "DA326 功能与说明" },
+      { src: "product/source/da326-troubleshooting.webp", label: "DA326 常见问题诊断" }
+    ]
   }
 };
 
@@ -237,6 +430,7 @@ if (!products[state.product]) state.product = "aw520h";
 const els = {
   switcher: document.getElementById("productSwitcher"),
   type: document.getElementById("productType"),
+  count: document.getElementById("productCount"),
   name: document.getElementById("productName"),
   summary: document.getElementById("productSummary"),
   index: document.getElementById("productIndex"),
@@ -260,6 +454,7 @@ const els = {
 };
 
 function renderSwitcher() {
+  if (els.count) els.count.textContent = `${Object.keys(products).length} PRODUCTS`;
   els.switcher.innerHTML = Object.entries(products).map(([key, product], index) => `
     <button class="product-chip ${key === state.product ? "active" : ""}" data-product="${key}" type="button">
       <span>${String(index + 1).padStart(2, "0")}</span>
@@ -322,6 +517,7 @@ function renderHotspots() {
   const entries = product.viewFeatures?.[state.view]
     || product.features.map((feature, index) => [index, ...feature.slice(2)]);
   const availableIndexes = entries.map(([index]) => index);
+  if (!entries.length) return;
   if (!availableIndexes.includes(state.feature)) state.feature = availableIndexes[0];
 
   entries.forEach(([index, x, y, lx, ly]) => {
@@ -385,7 +581,9 @@ function selectFeature(index, scroll = false) {
   const product = products[state.product];
   let viewChanged = false;
   if (product.viewFeatures) {
-    const targetView = Object.entries(product.viewFeatures)
+    const currentViewHasFeature = product.viewFeatures[state.view]
+      ?.some(([featureIndex]) => featureIndex === index);
+    const targetView = currentViewHasFeature ? null : Object.entries(product.viewFeatures)
       .find(([, entries]) => entries.some(([featureIndex]) => featureIndex === index));
     if (targetView && Number(targetView[0]) !== state.view) {
       state.view = Number(targetView[0]);
@@ -444,7 +642,7 @@ function renderFirmware(product) {
   els.sectionTitle.textContent = `${product.name} 固件更新`;
   if (!product.firmware.length) {
     els.sectionDescription.textContent = "本次 PPT 未提供该产品独立固件更新页。";
-    els.content.innerHTML = `<div class="content-list"><article class="content-card warning"><strong>资料范围说明</strong><p>AW510K 在 PPT 中包含功能和诊断内容，没有独立固件更新页面。可通过 AWCC 检查驱动、灯效配置与可用更新。</p></article></div>`;
+    els.content.innerHTML = `<div class="content-list"><article class="content-card warning"><strong>资料范围说明</strong><p>${product.name} 在本次资料中包含功能和诊断内容，没有独立固件更新页面。可优先通过 Dell 支持网站、Dell Peripheral Manager 或 AWCC 检查可用驱动、配置与更新。</p></article></div>`;
     return;
   }
   els.sectionDescription.textContent = "更新前保持设备供电与连接稳定，更新过程中不要拔出设备、关闭工具或切换连接模式。";
@@ -462,16 +660,27 @@ function openSource(src) {
   els.dialog.showModal();
 }
 
+function getSourcePage(page) {
+  if (typeof page === "object") return page;
+  return {
+    src: `product/source/slide-${page}.webp`,
+    label: `第 ${page} 页 · 点击放大`
+  };
+}
+
 function renderSource(product) {
   els.kicker.textContent = "SOURCE DECK";
   els.sectionTitle.textContent = `${product.name} PPT 原始资料`;
   els.sectionDescription.textContent = "以下为演示文稿对应原页。点击页面可放大，结构化内容均依据这些原始资料整理。";
-  els.content.innerHTML = `<div class="source-grid">${product.source.map(page => `
-    <button class="source-page" data-src="product/source/slide-${page}.webp" type="button">
-      <img src="product/source/slide-${page}.webp" alt="PPT 第 ${page} 页" loading="lazy" decoding="async">
-      <span>第 ${page} 页 · 点击放大</span>
+  els.content.innerHTML = `<div class="source-grid">${product.source.map(page => {
+    const source = getSourcePage(page);
+    return `
+    <button class="source-page" data-src="${source.src}" type="button">
+      <img src="${source.src}" alt="${source.label}">
+      <span>${source.label}</span>
     </button>
-  `).join("")}</div>`;
+  `;
+  }).join("")}</div>`;
   els.content.querySelectorAll(".source-page").forEach(button => {
     button.addEventListener("click", () => openSource(button.dataset.src));
   });
