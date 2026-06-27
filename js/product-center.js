@@ -15,11 +15,11 @@ const products = {
     viewNames: ["正面（佩戴面）", "反面（控制区）", "左侧（麦克风）", "右侧（标志灯）", "线缆 / 转接头"],
     viewScales: [0.9, 0.92, 0.9, 0.88, 0.88],
     viewFeatures: {
-      0: [[4, 62, 91, 70, 82]],
-      1: [[1, 32, 74, 8, 65], [2, 78, 75, 80, 61], [4, 36, 88, 6, 86]],
-      2: [[0, 27, 75, 7, 65], [3, 94, 77, 78, 88], [4, 92, 91, 76, 76]],
-      3: [[0, 52, 72, 62, 57], [1, 59, 84, 70, 83], [4, 52, 91, 64, 90]],
-      4: [[0, 65, 74, 74, 58], [3, 10, 88, 6, 76], [4, 84, 88, 72, 80]]
+      0: [[4, 50, 78, 62, 84]],
+      1: [[0, 35, 60, 12, 56]],
+      2: [[1, 64, 62, 78, 54], [2, 67, 71, 80, 72], [4, 38, 76, 13, 78]],
+      3: [[0, 53, 70, 65, 62], [4, 50, 84, 64, 84]],
+      4: [[3, 48, 69, 64, 63], [4, 72, 78, 77, 87]]
     },
     imageScale: 0.9,
     facts: [["连接", "USB Type-A / 3.5 mm"], ["平台", "Windows / 主机 / 移动设备"], ["软件", "Alienware Command Center"]],
@@ -54,16 +54,16 @@ const products = {
     image: "product/aw720m/views/view-2.webp",
     views: [
       "product/aw720m/views/view-2.webp",
-      "product/aw720m/views/view-bottom.webp",
+      "product/aw720m/ai-generated/bottom.webp",
       "product/aw720m/views/view-1.webp",
       "product/aw720m/views/view-3.webp",
       "product/aw720m/views/view-4.webp"
     ],
     viewNames: ["正面（按键面）", "反面（底部）", "左侧（侧键）", "前端（USB-C）", "后侧外观"],
-    viewScales: [0.88, 1.0, 0.9, 0.86, 0.9],
+    viewScales: [0.88, 1.08, 0.9, 0.86, 0.9],
     viewFeatures: {
       0: [[0, 39, 32, 8, 25], [1, 50, 27, 40, 10], [2, 61, 32, 76, 25]],
-      1: [[3, 30, 48, 5, 44], [4, 50, 63, 18, 78], [5, 50, 39, 61, 25], [6, 70, 48, 78, 59]],
+      1: [[3, 39, 50, 16, 49], [4, 50, 62, 28, 77], [5, 50, 51, 61, 38], [6, 62, 50, 73, 55]],
       2: [[8, 49, 43, 68, 32], [9, 55, 50, 73, 49]],
       3: [[7, 50, 64, 64, 78]],
       4: []
@@ -112,17 +112,17 @@ const products = {
     viewNames: ["整体 / 麦克风", "左右耳罩控制区", "侧面外观"],
     viewScales: [0.9, 0.9, 0.9],
     viewFeatures: {
-      0: [[3, 18, 82, 4, 88]],
+      0: [[3, 25, 72, 8, 82]],
       1: [
-        [7, 27, 58, 5, 50],
-        [6, 28, 68, 5, 66],
-        [4, 28, 79, 5, 82],
-        [5, 28, 86, 5, 90],
-        [0, 74, 58, 82, 50],
-        [1, 74, 67, 83, 66],
-        [2, 74, 77, 84, 82]
+        [1, 31, 58, 12, 52],
+        [6, 31, 68, 12, 67],
+        [7, 31, 75, 12, 76],
+        [5, 31, 82, 12, 84],
+        [0, 68, 58, 76, 50],
+        [2, 69, 69, 76, 68],
+        [4, 69, 79, 76, 80]
       ],
-      2: [[0, 70, 78, 80, 68], [5, 10, 88, 5, 82]]
+      2: [[0, 70, 78, 78, 68], [5, 12, 88, 8, 82]]
     },
     imageScale: 0.82,
     facts: [["连接", "2.4GHz / 蓝牙 / 3.5 mm"], ["充电", "USB-C"], ["软件", "AWCC / Dolby Atmos"]],
@@ -160,16 +160,16 @@ const products = {
     image: "product/aw620m/views/view-1.webp",
     views: [
       "product/aw620m/views/view-1.webp",
-      "product/aw620m/views/view-bottom.webp",
+      "product/aw620m/ai-generated/bottom.webp",
       "product/aw620m/views/view-2.webp",
       "product/aw620m/views/view-3.webp",
       "product/aw620m/views/view-4.webp"
     ],
     viewNames: ["正面（按键面）", "反面（底部）", "左侧（侧键）", "右后侧外观", "前端（USB-C）"],
-    viewScales: [0.88, 1.04, 0.92, 0.92, 0.94],
+    viewScales: [0.88, 1.08, 0.92, 0.92, 0.94],
     viewFeatures: {
       0: [[0, 40, 30, 9, 21], [1, 51, 25, 41, 8], [2, 62, 30, 76, 21], [3, 51, 36, 70, 39]],
-      1: [[4, 65, 48, 77, 61]],
+      1: [[4, 39, 52, 15, 56]],
       2: [[6, 54, 43, 68, 31], [7, 61, 45, 76, 48]],
       3: [],
       4: [[5, 18, 61, 4, 73]]
@@ -210,10 +210,11 @@ const products = {
     image: "product/aw510k/views/view-top.webp?v=1",
     views: [
       "product/aw510k/views/view-top.webp?v=1",
-      "product/aw510k/views/view-1.webp?v=2"
+      "product/aw510k/views/view-1.webp?v=2",
+      "product/aw510k/ai-generated/bottom-feet.webp"
     ],
-    viewNames: ["顶视功能区", "侧后结构"],
-    viewScales: [0.96, 0.92],
+    viewNames: ["顶视功能区", "侧后结构", "底部支撑脚"],
+    viewScales: [0.96, 0.92, 0.96],
     viewFeatures: {
       0: [
         [0, 33, 51, 7, 45],
@@ -224,7 +225,8 @@ const products = {
         [5, 82, 39, 72, 24],
         [6, 86, 54, 73, 73]
       ],
-      1: [[7, 34, 80, 57, 87]]
+      1: [],
+      2: [[7, 23, 37, 38, 25]]
     },
     imageScale: 0.94,
     facts: [["轴体", "Cherry MX 矮轴红轴"], ["灯效", "AlienFX 单键 RGB"], ["连接", "双 USB / AWCC"]],
@@ -252,15 +254,15 @@ const products = {
     type: "有线键盘",
     icon: "K",
     summary: "Dell 有线多媒体键盘，全尺寸布局，USB 即插即用，适合日常办公、服务台和固定工位使用。",
-    image: "product/kb216/kb216-product.webp",
+    image: "product/kb216/ai-generated/front.webp",
     views: [
-      "product/kb216/kb216-product.webp",
+      "product/kb216/ai-generated/front.webp",
       "product/kb216/ai-views/bottom-reference.webp"
     ],
-    viewNames: ["正面（PPT 原图）", "反面（AI 补全参考）"],
-    viewScales: [1.08, 1.0],
+    viewNames: ["正面（AI 生成）", "反面（AI 补全参考）"],
+    viewScales: [0.9, 1.0],
     viewFeatures: {
-      0: [[0, 49, 63, 6, 72], [1, 66, 58, 70, 43], [2, 78, 65, 73, 82], [3, 52, 25, 60, 17]],
+      0: [[0, 44, 57, 7, 66], [1, 61, 46, 68, 39], [2, 78, 57, 78, 74], [3, 54, 32, 63, 20], [4, 38, 54, 12, 47], [5, 51, 68, 10, 84]],
       1: [[3, 50, 6, 57, 18], [5, 50, 51, 60, 64]]
     },
     imageScale: 1.08,
@@ -330,20 +332,18 @@ const products = {
     type: "无线键鼠套装",
     icon: "K+M",
     summary: "Dell 专业无线键盘和鼠标套装，2.4GHz 接收器连接，包含全尺寸键盘、无线鼠标和 Dell Peripheral Manager 支持。",
-    image: "product/km5221w/km5221w-product.webp",
+    image: "product/km5221w/ai-generated/set.webp",
     views: [
-      "product/km5221w/km5221w-product.webp",
-      "product/km5221w/official-cutouts/view-1.webp",
-      "product/km5221w/official-cutouts/view-2.webp",
-      "product/km5221w/official-cutouts/view-3.webp"
+      "product/km5221w/ai-generated/set.webp",
+      "product/km5221w/ai-generated/keyboard.webp",
+      "product/km5221w/ai-generated/underside.webp"
     ],
-    viewNames: ["PPT 功能总览", "官方整套顶视", "键盘近景", "键盘侧面"],
-    viewScales: [1.0, 1.02, 1.04, 1.04],
+    viewNames: ["整套顶视（AI 生成）", "键盘顶视（AI 生成）", "底部 / 接收器（AI 生成）"],
+    viewScales: [0.98, 0.98, 0.98],
     viewFeatures: {
-      0: [[5, 58, 68, 47, 82], [6, 32, 68, 7, 80], [4, 77, 77, 78, 84]],
-      1: [[0, 42, 49, 7, 35], [1, 63, 46, 69, 30], [2, 80, 51, 83, 68], [7, 43, 56, 10, 72]],
-      2: [[0, 47, 58, 5, 69], [1, 68, 37, 74, 21], [7, 50, 75, 20, 87]],
-      3: [[7, 49, 47, 61, 32]]
+      0: [[0, 40, 55, 7, 43], [2, 74, 56, 82, 47], [3, 75, 63, 82, 66], [7, 42, 68, 12, 78]],
+      1: [[0, 43, 56, 7, 67], [1, 62, 47, 68, 35], [7, 50, 69, 18, 82]],
+      2: [[4, 82, 57, 83, 72], [5, 45, 67, 50, 82], [6, 42, 36, 48, 20]]
     },
     imageScale: 1.0,
     facts: [["连接", "2.4GHz 无线接收器"], ["组合", "键盘 + 鼠标"], ["软件", "Dell Peripheral Manager"]],

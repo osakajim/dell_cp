@@ -300,15 +300,15 @@ button { color: inherit; }
   left: var(--x);
   top: var(--y);
   z-index: 4;
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
   transform: translate(-50%, -50%);
   border: 0;
   border-radius: 50%;
   color: #04212a;
   background: #6be8f1;
-  box-shadow: 0 0 0 3px rgba(69, 219, 234, 0.15), 0 0 12px rgba(69, 219, 234, 0.42);
-  font-size: 10px;
+  box-shadow: 0 0 0 2px rgba(69, 219, 234, 0.15), 0 0 10px rgba(69, 219, 234, 0.42);
+  font-size: 9px;
   font-weight: 950;
   cursor: pointer;
   transition: 170ms ease;
@@ -316,7 +316,7 @@ button { color: inherit; }
 .hotspot:hover,
 .hotspot.active {
   background: #fff;
-  box-shadow: 0 0 0 4px rgba(69, 219, 234, 0.22), 0 0 18px rgba(69, 219, 234, 0.76);
+  box-shadow: 0 0 0 3px rgba(69, 219, 234, 0.22), 0 0 16px rgba(69, 219, 234, 0.76);
   transform: translate(-50%, -50%) scale(1.08);
 }
 .hotspot-label {
