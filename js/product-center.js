@@ -229,13 +229,13 @@ const products = {
     type: "矮轴 RGB 机械游戏键盘",
     icon: "K",
     summary: "Cherry MX 矮轴红轴、AlienFX 单键 RGB、全尺寸布局、多媒体与音量控制、1000 Hz 轮询率。",
-    image: "product/aw510k/views/view-top.webp?v=1",
+    image: "product/aw510k/ai-generated/front.webp",
     views: [
-      "product/aw510k/views/view-top.webp?v=1",
+      "product/aw510k/ai-generated/front.webp",
       "product/aw510k/views/view-1.webp?v=2",
       "product/aw510k/ai-generated/bottom-feet.webp"
     ],
-    viewNames: ["顶视功能区", "侧后结构", "底部支撑脚"],
+    viewNames: ["正面功能区", "侧后结构", "底部支撑脚"],
     viewScales: [0.96, 0.92, 0.96],
     viewFeatures: {
       0: [
