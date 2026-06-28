@@ -252,8 +252,8 @@ button { color: inherit; }
 }
 .rotation-frame {
   background-repeat: no-repeat;
-  background-size: calc(var(--frame-count, 1) * 100%) 100%;
-  background-position: var(--frame-position, 0%) center;
+  background-size: calc(var(--frame-cols, 1) * 100%) calc(var(--frame-rows, 1) * 100%);
+  background-position: var(--frame-x, 0%) var(--frame-y, 0%);
 }
 #productImage[hidden],
 .rotation-frame[hidden] {
@@ -265,15 +265,14 @@ button { color: inherit; }
   cursor: grabbing;
 }
 .product-stage.rotation-mode .view-switcher {
-  max-width: 260px;
-  flex-wrap: wrap;
+  max-width: 320px;
   justify-content: flex-end;
 }
 .product-stage.rotation-mode .view-button {
-  min-width: 27px;
-  width: 27px;
+  min-width: 42px;
+  width: auto;
   padding: 0;
-  border-radius: 50%;
+  border-radius: 10px;
   font-size: 9px;
 }
 .view-switcher {
@@ -602,10 +601,10 @@ button { color: inherit; }
   .view-switcher { right: 10px; bottom: 10px; }
   .view-badge { top: 10px; left: 10px; padding: 6px 9px; font-size: 9px; }
   .view-button { min-width: 30px; height: 28px; padding: 0 7px; }
-  .product-stage.rotation-mode .view-switcher { max-width: 170px; }
+  .product-stage.rotation-mode .view-switcher { max-width: 260px; }
   .product-stage.rotation-mode .view-button {
-    min-width: 24px;
-    width: 24px;
+    min-width: 34px;
+    width: auto;
     height: 24px;
   }
   .stage-hint { left: 10px; bottom: 10px; max-width: 46%; }
