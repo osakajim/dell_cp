@@ -234,21 +234,47 @@ button { color: inherit; }
   letter-spacing: 0.04em;
   backdrop-filter: blur(10px);
 }
-#productImage {
+#productImage,
+.rotation-frame {
   position: absolute;
   inset: 6%;
   width: 88%;
   height: 88%;
-  object-fit: contain;
   filter: drop-shadow(0 30px 34px rgba(0, 0, 0, 0.45));
   transition: opacity 180ms ease, transform 260ms ease;
   user-select: none;
-  -webkit-user-drag: none;
   cursor: grab;
   touch-action: pan-y;
 }
-#productImage:active {
+#productImage {
+  object-fit: contain;
+  -webkit-user-drag: none;
+}
+.rotation-frame {
+  background-repeat: no-repeat;
+  background-size: calc(var(--frame-count, 1) * 100%) 100%;
+  background-position: var(--frame-position, 0%) center;
+}
+#productImage[hidden],
+.rotation-frame[hidden] {
+  display: none;
+}
+#productImage:active,
+.rotation-frame:active,
+.product-stage.dragging {
   cursor: grabbing;
+}
+.product-stage.rotation-mode .view-switcher {
+  max-width: 260px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.product-stage.rotation-mode .view-button {
+  min-width: 27px;
+  width: 27px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 9px;
 }
 .view-switcher {
   position: absolute;
@@ -300,15 +326,15 @@ button { color: inherit; }
   left: var(--x);
   top: var(--y);
   z-index: 4;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   transform: translate(-50%, -50%);
   border: 0;
   border-radius: 50%;
   color: #04212a;
   background: #6be8f1;
   box-shadow: 0 0 0 2px rgba(69, 219, 234, 0.15), 0 0 10px rgba(69, 219, 234, 0.42);
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 950;
   cursor: pointer;
   transition: 170ms ease;
@@ -569,12 +595,19 @@ button { color: inherit; }
   .product-heading h1 { font-size: 39px; }
   .product-index { font-size: 30px; }
   .product-stage { height: 105vw; max-height: 560px; border-radius: 18px; }
-  #productImage { inset: 5%; width: 90%; height: 90%; }
-  .hotspot { width: 18px; height: 18px; font-size: 9px; }
+  #productImage,
+  .rotation-frame { inset: 5%; width: 90%; height: 90%; }
+  .hotspot { width: 15px; height: 15px; font-size: 8px; }
   .hotspot-label { max-width: 130px; padding: 6px 8px; font-size: 9px; }
   .view-switcher { right: 10px; bottom: 10px; }
   .view-badge { top: 10px; left: 10px; padding: 6px 9px; font-size: 9px; }
   .view-button { min-width: 30px; height: 28px; padding: 0 7px; }
+  .product-stage.rotation-mode .view-switcher { max-width: 170px; }
+  .product-stage.rotation-mode .view-button {
+    min-width: 24px;
+    width: 24px;
+    height: 24px;
+  }
   .stage-hint { left: 10px; bottom: 10px; max-width: 46%; }
   .quick-facts { grid-template-columns: 1fr; }
   .section-tabs { padding: 12px 14px; grid-template-columns: repeat(2, 1fr); }

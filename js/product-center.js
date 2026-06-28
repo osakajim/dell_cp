@@ -5,21 +5,36 @@ const products = {
     icon: "H",
     summary: "高解析音频认证驱动、Dolby Atmos、可伸缩麦克风，支持 USB Type-A 与 3.5 mm 连接。",
     image: "product/aw520h/views/gallery-2.webp",
+    rotation: {
+      sprite: "product/aw520h/rotation/aw520h-360-strip.webp",
+      frames: 10,
+      dragStep: 24
+    },
     views: [
       "product/aw520h/views/gallery-2.webp",
-      "product/aw520h/views/gallery-9.webp",
+      "product/aw520h/views/gallery-3.webp",
+      "product/aw520h/views/gallery-4.webp",
+      "product/aw520h/views/gallery-1.webp",
+      "product/aw520h/views/gallery-10.webp",
       "product/aw520h/views/gallery-8.webp",
-      "product/aw520h/views/gallery-5.webp",
-      "product/aw520h/views/gallery-6.webp"
+      "product/aw520h/views/gallery-9.webp",
+      "product/aw520h/views/gallery-6.webp",
+      "product/aw520h/views/gallery-7.webp",
+      "product/aw520h/views/gallery-5.webp"
     ],
-    viewNames: ["正面（佩戴面）", "反面（控制区）", "左侧（麦克风）", "右侧（标志灯）", "线缆 / 转接头"],
-    viewScales: [0.9, 0.92, 0.9, 0.88, 0.88],
+    viewNames: ["正面 0°", "左前 40°", "左侧 80°", "左后 120°", "后侧 / 麦克风 160°", "背面控制区 200°", "右后 / 线缆 240°", "右前 / 麦克风 280°", "右前 320°", "右侧 360°"],
+    viewScales: [0.9, 0.9, 0.92, 0.9, 0.9, 0.92, 0.9, 0.9, 0.9, 0.92],
     viewFeatures: {
-      0: [[4, 50, 78, 62, 84]],
-      1: [[0, 35, 60, 12, 56]],
-      2: [[1, 64, 62, 78, 54], [2, 67, 71, 80, 72], [4, 38, 76, 13, 78]],
-      3: [[0, 53, 70, 65, 62], [4, 50, 84, 64, 84]],
-      4: [[3, 48, 69, 64, 63], [4, 72, 78, 77, 87]]
+      0: [[0, 35, 68, 12, 56]],
+      1: [[0, 35, 63, 12, 52]],
+      2: [[0, 50, 64, 64, 54], [4, 50, 83, 65, 87]],
+      3: [[0, 55, 65, 70, 55], [4, 50, 84, 66, 88]],
+      4: [[0, 31, 52, 10, 44], [3, 18, 78, 6, 86], [2, 76, 62, 83, 70]],
+      5: [[1, 25, 62, 8, 55], [2, 73, 62, 83, 55], [4, 49, 83, 64, 88]],
+      6: [[0, 35, 65, 12, 54], [1, 66, 61, 82, 55], [2, 72, 70, 83, 73], [4, 46, 79, 64, 87]],
+      7: [[0, 61, 63, 72, 52], [3, 17, 76, 5, 84], [4, 79, 77, 83, 88]],
+      8: [[0, 58, 64, 72, 53], [4, 56, 83, 75, 88]],
+      9: [[0, 50, 64, 65, 54], [4, 50, 84, 66, 88]]
     },
     imageScale: 0.9,
     facts: [["连接", "USB Type-A / 3.5 mm"], ["平台", "Windows / 主机 / 移动设备"], ["软件", "Alienware Command Center"]],
@@ -435,6 +450,7 @@ const els = {
   summary: document.getElementById("productSummary"),
   index: document.getElementById("productIndex"),
   image: document.getElementById("productImage"),
+  rotationFrame: document.getElementById("rotationFrame"),
   viewBadge: document.getElementById("viewBadge"),
   stage: document.getElementById("productStage"),
   lines: document.getElementById("hotspotLines"),
@@ -477,6 +493,25 @@ function selectProduct(key) {
   render();
 }
 
+function getViews(product) {
+  if (product.rotation) {
+    return Array.from({ length: product.rotation.frames }, (_, index) => product.views?.[index] || product.image);
+  }
+  return product.views || [product.image];
+}
+
+function getFramePosition(product) {
+  const count = product.rotation?.frames || 1;
+  if (count <= 1) return "0%";
+  return `${(state.view / (count - 1)) * 100}%`;
+}
+
+function syncFeatureCards() {
+  els.content.querySelectorAll("[data-feature]").forEach(element => {
+    element.classList.toggle("active", Number(element.dataset.feature) === state.feature);
+  });
+}
+
 function renderProduct() {
   const product = products[state.product];
   const index = Object.keys(products).indexOf(state.product) + 1;
@@ -484,9 +519,21 @@ function renderProduct() {
   els.name.textContent = product.name;
   els.summary.textContent = product.summary;
   els.index.textContent = `${String(index).padStart(2, "0")} / ${String(Object.keys(products).length).padStart(2, "0")}`;
-  const views = product.views || [product.image];
+  const views = getViews(product);
+  const isRotation = Boolean(product.rotation);
   state.view = Math.min(state.view, views.length - 1);
-  els.image.src = views[state.view];
+  els.stage.classList.toggle("rotation-mode", isRotation);
+  els.image.hidden = isRotation;
+  els.rotationFrame.hidden = !isRotation;
+  if (isRotation) {
+    els.rotationFrame.style.backgroundImage = `url("${product.rotation.sprite}")`;
+    els.rotationFrame.style.setProperty("--frame-count", product.rotation.frames);
+    els.rotationFrame.style.setProperty("--frame-position", getFramePosition(product));
+    els.rotationFrame.style.transform = `scale(${product.viewScales?.[state.view] || product.imageScale || 1})`;
+    els.rotationFrame.setAttribute("aria-label", `${product.name} ${product.type}`);
+  } else {
+    els.image.src = views[state.view];
+  }
   els.image.alt = `${product.name} ${product.type}`;
   els.image.style.transform = `scale(${product.viewScales?.[state.view] || product.imageScale || 1})`;
   const currentViewName = product.viewNames?.[state.view] || "产品视图";
@@ -494,15 +541,19 @@ function renderProduct() {
   els.viewBadge.hidden = views.length === 1;
   els.viewSwitcher.innerHTML = views.length > 1 ? views.map((src, index) => `
     <button class="view-button ${index === state.view ? "active" : ""}" data-view="${index}" type="button">
-      ${product.viewNames?.[index] || (index === 0 ? "功能" : `视角 ${index + 1}`)}
+      ${isRotation ? String(index + 1).padStart(2, "0") : (product.viewNames?.[index] || (index === 0 ? "功能" : `视角 ${index + 1}`))}
     </button>
   `).join("") : "";
   els.viewSwitcher.querySelectorAll(".view-button").forEach(button => {
+    const viewIndex = Number(button.dataset.view);
+    button.title = product.viewNames?.[viewIndex] || `视角 ${viewIndex + 1}`;
+  });
+  els.viewSwitcher.querySelectorAll(".view-button").forEach(button => {
     button.addEventListener("click", () => selectView(Number(button.dataset.view)));
   });
-  els.stageHint.textContent = views.length > 1
-    ? "点击编号；左右拖动切换视角"
-    : "点击编号查看对应功能";
+  els.stageHint.textContent = isRotation
+    ? "拖动耳机 360° 旋转；点击功能卡定位"
+    : (views.length > 1 ? "点击编号；左右拖动切换视角" : "点击编号查看对应功能");
   els.facts.innerHTML = product.facts.map(([name, value]) => `<div class="fact"><strong>${name}</strong><span>${value}</span></div>`).join("");
 }
 
@@ -566,14 +617,15 @@ function drawActiveLine(button, label, index) {
   els.lines.replaceChildren(line);
 }
 
-function selectView(index) {
+function selectView(index, updateSection = true) {
   const product = products[state.product];
-  const views = product.views || [product.image];
+  const views = getViews(product);
   state.view = (index + views.length) % views.length;
   const entries = product.viewFeatures?.[state.view];
   if (entries?.length) state.feature = entries[0][0];
   renderProduct();
-  renderSection();
+  if (updateSection) renderSection();
+  else syncFeatureCards();
   renderHotspots();
 }
 
@@ -593,9 +645,7 @@ function selectFeature(index, scroll = false) {
   state.feature = index;
   if (viewChanged) renderProduct();
   renderHotspots();
-  els.content.querySelectorAll("[data-feature]").forEach(element => {
-    element.classList.toggle("active", Number(element.dataset.feature) === index);
-  });
+  syncFeatureCards();
   if (scroll) {
     const card = els.content.querySelector(`[data-feature="${index}"]`);
     if (card) card.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -723,19 +773,43 @@ els.dialog.addEventListener("click", event => {
 });
 
 let dragStartX = null;
-els.image.addEventListener("pointerdown", event => {
+let dragStartView = 0;
+function canDragStage(event) {
+  if (event.button !== undefined && event.button !== 0) return false;
+  if (event.target.closest("button, a, dialog")) return false;
+  const product = products[state.product];
+  return getViews(product).length > 1;
+}
+els.stage.addEventListener("pointerdown", event => {
+  if (!canDragStage(event)) return;
+  const product = products[state.product];
   dragStartX = event.clientX;
-  els.image.setPointerCapture(event.pointerId);
+  dragStartView = state.view;
+  els.stage.classList.add("dragging");
+  els.stage.setPointerCapture(event.pointerId);
+  if (product.rotation) event.preventDefault();
 });
-els.image.addEventListener("pointerup", event => {
+els.stage.addEventListener("pointermove", event => {
+  if (dragStartX === null) return;
+  const product = products[state.product];
+  if (!product.rotation) return;
+  const step = product.rotation.dragStep || 28;
+  const offset = Math.trunc((dragStartX - event.clientX) / step);
+  if (!offset) return;
+  selectView(dragStartView + offset, false);
+});
+els.stage.addEventListener("pointerup", event => {
   if (dragStartX === null) return;
   const distance = event.clientX - dragStartX;
+  const product = products[state.product];
   dragStartX = null;
-  if (Math.abs(distance) < 45) return;
+  els.stage.classList.remove("dragging");
+  if (product.rotation || Math.abs(distance) < 45) return;
   selectView(state.view + (distance < 0 ? 1 : -1));
 });
-els.image.addEventListener("pointercancel", () => {
+els.stage.addEventListener("pointercancel", () => {
   dragStartX = null;
+  els.stage.classList.remove("dragging");
 });
 
 let lineResizeFrame;
