@@ -134,17 +134,16 @@ const products = {
     viewNames: ["整体 / 麦克风", "左右耳罩控制区", "侧面外观"],
     viewScales: [0.9, 0.9, 0.9],
     viewFeatures: {
-      0: [[3, 25, 72, 8, 82]],
+      0: [[3, 22, 82, 7, 82], [4, 17, 75, 7, 75]],
       1: [
-        [1, 31, 58, 12, 52],
-        [6, 31, 68, 12, 67],
-        [7, 31, 75, 12, 76],
-        [5, 31, 82, 12, 84],
-        [0, 68, 58, 76, 50],
-        [2, 69, 69, 76, 68],
-        [4, 69, 79, 76, 80]
+        [7, 37.0, 69.8, 12, 73],
+        [6, 37.8, 76.2, 12, 82],
+        [5, 38.4, 82.0, 12, 90],
+        [0, 67.5, 68.5, 76, 73],
+        [1, 67.5, 71.1, 76, 76],
+        [2, 65.4, 74.8, 76, 85]
       ],
-      2: [[0, 70, 78, 78, 68], [5, 12, 88, 8, 82]]
+      2: [[0, 70, 78, 78, 78], [4, 12, 88, 8, 88]]
     },
     imageScale: 0.82,
     facts: [["连接", "2.4GHz / 蓝牙 / 3.5 mm"], ["充电", "USB-C"], ["软件", "AWCC / Dolby Atmos"]],
@@ -620,7 +619,7 @@ function renderHotspots() {
   if (!entries.length) return;
   if (!availableIndexes.includes(state.feature)) state.feature = availableIndexes[0];
 
-  entries.forEach(([index, x, y, lx, ly]) => {
+  entries.forEach(([index, x, y]) => {
     const feature = product.features[index];
 
     const button = document.createElement("button");
@@ -639,8 +638,8 @@ function renderHotspots() {
     label.className = "hotspot-label active";
     label.dataset.feature = index;
     label.type = "button";
-    label.style.setProperty("--lx", `${lx}%`);
-    label.style.setProperty("--ly", `${ly}%`);
+    label.style.setProperty("--x", `${x}%`);
+    label.style.setProperty("--y", `${y}%`);
     label.textContent = `${index + 1} · ${feature[0]}`;
     label.addEventListener("click", () => selectFeature(index, true));
     els.layer.appendChild(label);
