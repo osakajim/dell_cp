@@ -6,7 +6,7 @@ const products = {
     summary: "高解析音频认证驱动、Dolby Atmos、可伸缩麦克风，支持 USB Type-A 与 3.5 mm 连接。",
     image: "product/aw520h/views/gallery-2.webp",
     rotation: {
-      sprite: "product/aw520h/rotation/aw520h-orbit-40.webp",
+      sprite: "product/aw520h/rotation/aw520h-orbit-40.webp?v=2",
       cols: 8,
       rows: 5,
       initialRow: 2,
