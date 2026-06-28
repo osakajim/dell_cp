@@ -8,9 +8,9 @@ const products = {
     views: [
       "product/aw520h/views/gallery-2.webp",
       "product/aw520h/views/gallery-9.webp",
-      "product/aw520h/views/gallery-6.webp",
       "product/aw520h/views/gallery-8.webp",
-      "product/aw520h/views/gallery-5.webp"
+      "product/aw520h/views/gallery-5.webp",
+      "product/aw520h/views/gallery-6.webp"
     ],
     viewNames: ["正面（佩戴面）", "反面（控制区）", "左侧（麦克风）", "右侧（标志灯）", "线缆 / 转接头"],
     viewScales: [0.9, 0.92, 0.9, 0.88, 0.88],
@@ -19,7 +19,7 @@ const products = {
       1: [[0, 35, 60, 12, 56]],
       2: [[1, 64, 62, 78, 54], [2, 67, 71, 80, 72], [4, 38, 76, 13, 78]],
       3: [[0, 53, 70, 65, 62], [4, 50, 84, 64, 84]],
-      4: [[3, 48, 69, 64, 63], [4, 72, 78, 77, 87]]
+      4: [[3, 27, 73, 7, 74], [4, 72, 78, 77, 87]]
     },
     imageScale: 0.9,
     facts: [["连接", "USB Type-A / 3.5 mm"], ["平台", "Windows / 主机 / 移动设备"], ["软件", "Alienware Command Center"]],
@@ -116,12 +116,12 @@ const products = {
       1: [
         [7, 37.0, 69.8, 12, 73],
         [6, 37.8, 76.2, 12, 82],
-        [5, 38.4, 82.0, 12, 90],
+        [4, 38.4, 82.0, 12, 90],
         [0, 67.5, 68.5, 76, 73],
         [1, 67.5, 71.1, 76, 76],
         [2, 65.4, 74.8, 76, 85]
       ],
-      2: [[0, 70, 78, 78, 78], [4, 12, 88, 8, 88]]
+      2: [[0, 70, 78, 78, 78], [5, 12, 88, 8, 88]]
     },
     imageScale: 0.82,
     facts: [["连接", "2.4GHz / 蓝牙 / 3.5 mm"], ["充电", "USB-C"], ["软件", "AWCC / Dolby Atmos"]],
@@ -597,7 +597,7 @@ function renderHotspots() {
   if (!entries.length) return;
   if (!availableIndexes.includes(state.feature)) state.feature = availableIndexes[0];
 
-  entries.forEach(([index, x, y]) => {
+  entries.forEach(([index, x, y, lx = x, ly = y]) => {
     const feature = product.features[index];
 
     const button = document.createElement("button");
@@ -616,8 +616,8 @@ function renderHotspots() {
     label.className = "hotspot-label active";
     label.dataset.feature = index;
     label.type = "button";
-    label.style.setProperty("--x", `${x}%`);
-    label.style.setProperty("--y", `${y}%`);
+    label.style.setProperty("--lx", `${lx}%`);
+    label.style.setProperty("--ly", `${ly}%`);
     label.textContent = `${index + 1} · ${feature[0]}`;
     label.addEventListener("click", () => selectFeature(index, true));
     els.layer.appendChild(label);
